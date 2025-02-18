@@ -1,5 +1,6 @@
 # RGBLIGHT_ENABLE = yes
 
+MOUSEKEY_ENABLE = no
 OLED_ENABLE = yes
 
 VIA_ENABLE = yes
