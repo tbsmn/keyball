@@ -65,6 +65,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                    QK_BOOT  , KBC_RST  , _______  ,        _______  , _______  ,                   _______  , _______  , _______       , KBC_RST  , QK_BOOT
    ),
 };
+
+const uint16_t PROGMEM mouse_combo1[] = {KC_T, KC_N, COMBO_END};
+const uint16_t PROGMEM mouse_combo2[] = {KC_N, KC_R, COMBO_END};
+const uint16_t PROGMEM mouse_combo3[] = {KC_T, KC_N, KC_R, COMBO_END};
+combo_t key_combos[] = {
+    COMBO(mouse_combo1, KC_BTN1),
+    COMBO(mouse_combo2, KC_BTN2),
+    COMBO(mouse_combo3, KC_BTN3),
+};
 // clang-format on
 
 layer_state_t layer_state_set_user(layer_state_t state) {
