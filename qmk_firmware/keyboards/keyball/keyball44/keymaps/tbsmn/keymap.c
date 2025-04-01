@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    ),
 };
 
-const uint16_t PROGMEM mouse_combo1[] = {KC_T, KC_N, COMBO_END};
+const uint16_t PROGMEM mouse_combo1[] = {LGUI_T(KC_T), LT(1, KC_N), COMBO_END};
 // const uint16_t PROGMEM mouse_combo2[] = {KC_N, KC_R, COMBO_END};
 // const uint16_t PROGMEM mouse_combo3[] = {KC_T, KC_N, KC_R, COMBO_END};
 combo_t key_combos[] = {
