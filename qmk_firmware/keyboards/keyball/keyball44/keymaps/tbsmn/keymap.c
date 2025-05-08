@@ -77,6 +77,8 @@ combo_t key_combos[] = {
     COMBO(mouse_combo2, KC_MS_BTN2),
     COMBO(mouse_combo3, KC_MS_BTN3),
     COMBO(backspace_combo, KC_BSPC),
+    COMBO(delete_combo1, KC_DEL),
+    COMBO(delete_combo2, KC_DEL),
 };
 // clang-format on
 
