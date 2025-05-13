@@ -70,15 +70,13 @@ const uint16_t PROGMEM mouse_combo1[] = {RGUI_T(KC_T), LT(3, KC_N), COMBO_END};
 const uint16_t PROGMEM mouse_combo2[] = {LT(3, KC_N), RALT_T(KC_R), COMBO_END};
 const uint16_t PROGMEM mouse_combo3[] = {RGUI_T(KC_T), LT(3, KC_N), RALT_T(KC_R), COMBO_END};
 const uint16_t PROGMEM backspace_combo[] = {RGUI_T(KC_4), KC_5, COMBO_END};
-const uint16_t PROGMEM delete_combo1[] = {RALT_T(KC_R), RCTL_T(KC_H), COMBO_END};
-const uint16_t PROGMEM delete_combo2[] = {RALT_T(KC_6), RCTL_T(KC_DOT), COMBO_END};
+const uint16_t PROGMEM delete_combo1[] = {RALT_T(KC_6), RCTL_T(KC_DOT), COMBO_END};
 combo_t key_combos[] = {
     COMBO(mouse_combo1, KC_MS_BTN1),
     COMBO(mouse_combo2, KC_MS_BTN2),
     COMBO(mouse_combo3, KC_MS_BTN3),
     COMBO(backspace_combo, KC_BSPC),
     COMBO(delete_combo1, KC_DEL),
-    COMBO(delete_combo2, KC_DEL),
 };
 // clang-format on
 
