@@ -75,6 +75,8 @@ const uint16_t PROGMEM qutebrowser_back[] = {KC_B, KC_M, COMBO_END};
 const uint16_t PROGMEM qutebrowser_forward[] = {KC_M, KC_L, COMBO_END};
 const uint16_t PROGMEM qutebrowser_history_back[] = {KC_G, KC_COMM, COMBO_END};
 const uint16_t PROGMEM qutebrowser_history_forward[] = {KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM pageup_combo[] = {KC_P, KC_B, COMBO_END};
+const uint16_t PROGMEM pagedown_combo[] = {KC_W, KC_G, COMBO_END};
 combo_t key_combos[] = {
     COMBO(mouse_combo1, KC_MS_BTN1),
     COMBO(mouse_combo2, KC_MS_BTN2),
@@ -85,6 +87,8 @@ combo_t key_combos[] = {
     COMBO(qutebrowser_forward, LSFT(KC_N)),
     COMBO(qutebrowser_history_back, LSFT(KC_D)),
     COMBO(qutebrowser_history_forward, LSFT(KC_R)),
+    COMBO(pageup_combo, KC_PAGE_UP),
+    COMBO(pagedown_combo, KC_PAGE_DOWN),
 };
 // clang-format on
 
