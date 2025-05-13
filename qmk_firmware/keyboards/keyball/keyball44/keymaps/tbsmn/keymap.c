@@ -71,12 +71,20 @@ const uint16_t PROGMEM mouse_combo2[] = {LT(3, KC_N), RALT_T(KC_R), COMBO_END};
 const uint16_t PROGMEM mouse_combo3[] = {RGUI_T(KC_T), LT(3, KC_N), RALT_T(KC_R), COMBO_END};
 const uint16_t PROGMEM backspace_combo[] = {RGUI_T(KC_4), KC_5, COMBO_END};
 const uint16_t PROGMEM delete_combo1[] = {RALT_T(KC_6), RCTL_T(KC_DOT), COMBO_END};
+const uint16_t PROGMEM qutebrowser_back[] = {KC_B, KC_M, COMBO_END};
+const uint16_t PROGMEM qutebrowser_forward[] = {KC_M, KC_L, COMBO_END};
+const uint16_t PROGMEM qutebrowser_history_back[] = {KC_G, KC_COMM, COMBO_END};
+const uint16_t PROGMEM qutebrowser_history_forward[] = {KC_COMM, KC_DOT, COMBO_END};
 combo_t key_combos[] = {
     COMBO(mouse_combo1, KC_MS_BTN1),
     COMBO(mouse_combo2, KC_MS_BTN2),
     COMBO(mouse_combo3, KC_MS_BTN3),
     COMBO(backspace_combo, KC_BSPC),
     COMBO(delete_combo1, KC_DEL),
+    COMBO(qutebrowser_back, LSFT(KC_T)),
+    COMBO(qutebrowser_forward, LSFT(KC_N)),
+    COMBO(qutebrowser_history_back, LSFT(KC_D)),
+    COMBO(qutebrowser_history_forward, LSFT(KC_R)),
 };
 // clang-format on
 
