@@ -100,7 +100,7 @@ combo_t key_combos[] = {
     COMBO(move_right_combo, RALT(KC_E)),
     COMBO(move_left_combo, RALT(KC_S)),
     COMBO(move_up_combo, RALT(KC_U)),
-    COMBO(move_down_cobo, RALT(KC_I)),
+    COMBO(move_down_combo, RALT(KC_I)),
 };
 // clang-format on
 
