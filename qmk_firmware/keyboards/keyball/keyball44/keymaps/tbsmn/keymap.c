@@ -67,10 +67,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 const uint16_t PROGMEM mouse_combo1[] = {RGUI_T(KC_T), LT(3, KC_N), COMBO_END};
-const uint16_t PROGMEM mouse_combo2[] = {LT(3, KC_N), RALT_T(KC_R), COMBO_END};
-const uint16_t PROGMEM mouse_combo3[] = {RGUI_T(KC_T), LT(3, KC_N), RALT_T(KC_R), COMBO_END};
+const uint16_t PROGMEM mouse_combo2[] = {LT(3, KC_N), LALT_T(KC_R), COMBO_END};
+const uint16_t PROGMEM mouse_combo3[] = {RGUI_T(KC_T), LT(3, KC_N), LALT_T(KC_R), COMBO_END};
 const uint16_t PROGMEM plus_combo[] = {RGUI_T(KC_4), KC_5, COMBO_END};
-const uint16_t PROGMEM minus_combo[] = {KC_5, RALT_T(KC_6), COMBO_END};
+const uint16_t PROGMEM minus_combo[] = {KC_5, LALT_T(KC_6), COMBO_END};
 const uint16_t PROGMEM asterisk_combo[] = {KC_1, KC_2, COMBO_END};
 const uint16_t PROGMEM slash_combo[] = {KC_2, KC_3, COMBO_END};
 const uint16_t PROGMEM qutebrowser_back[] = {KC_B, KC_M, COMBO_END};
