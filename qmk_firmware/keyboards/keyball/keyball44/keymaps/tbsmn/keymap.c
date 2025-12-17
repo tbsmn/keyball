@@ -67,10 +67,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 const uint16_t PROGMEM mouse_combo1[] = {RGUI_T(KC_T), LT(3, KC_N), COMBO_END};
-const uint16_t PROGMEM mouse_combo2[] = {LT(3, KC_N), LALT_T(KC_R), COMBO_END};
-const uint16_t PROGMEM mouse_combo3[] = {RGUI_T(KC_T), LT(3, KC_N), LALT_T(KC_R), COMBO_END};
+const uint16_t PROGMEM mouse_combo2[] = {LT(3, KC_N), RALT_T(KC_R), COMBO_END};
+const uint16_t PROGMEM mouse_combo3[] = {RGUI_T(KC_T), LT(3, KC_N), RALT_T(KC_R), COMBO_END};
 const uint16_t PROGMEM plus_combo[] = {RGUI_T(KC_4), KC_5, COMBO_END};
-const uint16_t PROGMEM minus_combo[] = {KC_5, LALT_T(KC_6), COMBO_END};
+const uint16_t PROGMEM minus_combo[] = {KC_5, RALT_T(KC_6), COMBO_END};
 const uint16_t PROGMEM asterisk_combo[] = {KC_1, KC_2, COMBO_END};
 const uint16_t PROGMEM slash_combo[] = {KC_2, KC_3, COMBO_END};
 const uint16_t PROGMEM qutebrowser_back[] = {KC_B, KC_M, COMBO_END};
@@ -97,10 +97,10 @@ combo_t key_combos[] = {
     COMBO(qutebrowser_history_forward, LSFT(KC_K)),
     COMBO(pageup_combo, KC_PAGE_UP),
     COMBO(pagedown_combo, KC_PAGE_DOWN),
-    COMBO(move_right_combo, RALT(KC_E)),
-    COMBO(move_left_combo, RALT(KC_S)),
-    COMBO(move_up_combo, RALT(KC_U)),
-    COMBO(move_down_combo, RALT(KC_I)),
+    COMBO(move_right_combo, LALT(KC_E)),
+    COMBO(move_left_combo, LALT(KC_S)),
+    COMBO(move_up_combo, LALT(KC_U)),
+    COMBO(move_down_combo, LALT(KC_I)),
 };
 // clang-format on
 
