@@ -151,13 +151,44 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     return true;
 }
 
+// #ifdef OLED_ENABLE
+//
+// #    include "lib/oledkit/oledkit.h"
+//
+// void oledkit_render_info_user(void) {
+//     keyball_oled_render_keyinfo();
+//     keyball_oled_render_ballinfo();
+//     keyball_oled_render_layerinfo();
+// }
+// #endif
+
 #ifdef OLED_ENABLE
 
 #    include "lib/oledkit/oledkit.h"
+#    include "os_detection.h"
 
 void oledkit_render_info_user(void) {
     keyball_oled_render_keyinfo();
     keyball_oled_render_ballinfo();
     keyball_oled_render_layerinfo();
 }
+
+void oledkit_render_logo_user(void) {
+    switch (detected_host_os()) {
+        case OS_MACOS:
+        case OS_IOS:
+            oled_write_P(PSTR("  Connected to\n   macOS"), false);
+            break;
+        case OS_LINUX:
+            oled_write_P(PSTR("  Connected to\n    Arch"), false);
+            break;
+        case OS_WINDOWS:
+            oled_write_P(PSTR("  Connected to\n  Windows"), false);
+            break;
+        default:
+            oled_write_P(PSTR("  Detecting\n    OS..."), false);
+            break;
+    }
+}
+
 #endif
