@@ -122,6 +122,29 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+bool is_tap_flow_key(uint16_t keycode) {
+    switch (keycode) {
+        // Extract the tap keycode from mod-tap/layer-tap keys
+        case QK_MOD_TAP ... QK_MOD_TAP_MAX:
+            keycode = QK_MOD_TAP_GET_TAP_KEYCODE(keycode);
+            break;
+        case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
+            keycode = QK_LAYER_TAP_GET_TAP_KEYCODE(keycode);
+            break;
+    }
+    switch (keycode) {
+        case KC_A ... KC_Z:
+        case KC_COMM:
+        case KC_DOT:
+        case KC_SCLN:
+        case KC_SLSH:
+            return true;
+        case KC_SPC:  // ← removed: Space/Shift key bypasses Tap Flow entirely
+            return false;
+    }
+    return false;
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     if (!process_tap_flow(keycode, record)) { return false; }
     // your other code...
