@@ -1,0 +1,12 @@
+name: Build a firmware on push
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    uses: ./.github/workflows/build-firmware.yml
+    with:
+      qmk_version: '0.22.14'
+      keyboard:    'keyball44'
+      keymap:      'tbsmn'
