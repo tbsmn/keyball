@@ -122,6 +122,12 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+    if (!process_tap_flow(keycode, record)) { return false; }
+    // your other code...
+    return true;
+}
+
 #ifdef OLED_ENABLE
 
 #    include "lib/oledkit/oledkit.h"
