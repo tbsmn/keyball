@@ -4,3 +4,4 @@ OLED_ENABLE = yes
 VIA_ENABLE = yes
 DYNAMIC_TAPPING_TERM_ENABLE = no
 COMBO_ENABLE = yes
+SRC += features/tap_flow.c
