@@ -159,6 +159,7 @@ const uint16_t PROGMEM move_left_combo[] = {LALT_T(KC_S), LT(3, KC_I), COMBO_END
 const uint16_t PROGMEM move_right_combo[] = {LT(3, KC_I), LGUI_T(KC_E), COMBO_END};
 const uint16_t PROGMEM move_up_combo[] = {(KC_U), (KC_A), COMBO_END};
 const uint16_t PROGMEM move_down_combo[] = {(KC_LBRC), (KC_QUOT), COMBO_END};
+const uint16_t PROGMEM alt_gui_combo[] = {RGUI_T(KC_T), RALT_T(KC_R), COMBO_END};
 combo_t key_combos[] = {
     COMBO(mouse_combo1, KC_MS_BTN1),
     COMBO(mouse_combo2, KC_MS_BTN2),
@@ -177,6 +178,7 @@ combo_t key_combos[] = {
     COMBO(move_left_combo, LALT(KC_S)),
     COMBO(move_up_combo, LALT(KC_U)),
     COMBO(move_down_combo, LALT(KC_I)),
+    COMBO(alt_gui_combo, RALT(KC_RGUI)),
 };
 // clang-format on
 
@@ -186,25 +188,25 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 }
 
-// bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-//     switch (keycode) {
-//         case LSFT_T(KC_SPC):
-//             // Immediately select the hold action when another key is pressed.
-//             return true;
-//         default:
-//             // Do not select the hold action when another key is pressed.
-//             return false;
-//     }
-// }
-
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LSFT_T(KC_SPC):
+            // Immediately select the hold action when another key is pressed.
             return true;
         default:
-            return IS_QK_MOD_TAP(keycode);
+            // Do not select the hold action when another key is pressed.
+            return false;
     }
 }
+
+// bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+//     switch (keycode) {
+//         case LSFT_T(KC_SPC):
+//             return true;
+//         default:
+//             return IS_QK_MOD_TAP(keycode);
+//     }
+// }
 
 bool is_tap_flow_key(uint16_t keycode) {
     switch (keycode) {
