@@ -185,14 +185,23 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 }
 
+// bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+//     switch (keycode) {
+//         case LSFT_T(KC_SPC):
+//             // Immediately select the hold action when another key is pressed.
+//             return true;
+//         default:
+//             // Do not select the hold action when another key is pressed.
+//             return false;
+//     }
+// }
+
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LSFT_T(KC_SPC):
-            // Immediately select the hold action when another key is pressed.
             return true;
         default:
-            // Do not select the hold action when another key is pressed.
-            return false;
+            return IS_QK_MOD_TAP(keycode);
     }
 }
 
@@ -223,15 +232,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     if (!process_tap_flow(keycode, record)) { return false; }
     // your other code...
     return true;
-}
-
-bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    // If the key is a mod-tap, use hold-on-other-key-press
-    // so that holding two mods together always gives both holds
-    if (IS_QK_MOD_TAP(keycode)) {
-        return true;
-    }
-    return false;
 }
 
 // #ifdef OLED_ENABLE
