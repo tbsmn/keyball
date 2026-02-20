@@ -224,6 +224,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     return true;
 }
 
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    // If the key is a mod-tap, use hold-on-other-key-press
+    // so that holding two mods together always gives both holds
+    if (IS_QK_MOD_TAP(keycode)) {
+        return true;
+    }
+    return false;
+}
+
 // #ifdef OLED_ENABLE
 //
 // #    include "lib/oledkit/oledkit.h"
