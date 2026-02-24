@@ -161,7 +161,7 @@ const uint16_t PROGMEM move_up_combo[] = {(KC_U), (KC_A), COMBO_END};
 const uint16_t PROGMEM move_down_combo[] = {(KC_LBRC), (KC_QUOT), COMBO_END};
 const uint16_t PROGMEM ralt_rgui_combo[] = {RGUI_T(KC_T), RALT_T(KC_R), COMBO_END};
 const uint16_t PROGMEM ralt_rctl_combo[] = {RCTL_T(KC_H), RALT_T(KC_R), COMBO_END};
-const uint16_t PROGMEM lalt_rgui_combo[] = {LGUI_T(KC_E), LALT_T(KC_S), COMBO_END};
+const uint16_t PROGMEM lalt_lgui_combo[] = {LGUI_T(KC_E), LALT_T(KC_S), COMBO_END};
 const uint16_t PROGMEM lalt_lctl_combo[] = {LCTL_T(KC_C), LALT_T(KC_S), COMBO_END};
 combo_t key_combos[] = {
     COMBO(mouse_combo1, KC_MS_BTN1),
