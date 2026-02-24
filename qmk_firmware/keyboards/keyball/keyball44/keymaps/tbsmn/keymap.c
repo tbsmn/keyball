@@ -159,8 +159,10 @@ const uint16_t PROGMEM move_left_combo[] = {LALT_T(KC_S), LT(3, KC_I), COMBO_END
 const uint16_t PROGMEM move_right_combo[] = {LT(3, KC_I), LGUI_T(KC_E), COMBO_END};
 const uint16_t PROGMEM move_up_combo[] = {(KC_U), (KC_A), COMBO_END};
 const uint16_t PROGMEM move_down_combo[] = {(KC_LBRC), (KC_QUOT), COMBO_END};
-const uint16_t PROGMEM alt_gui_combo[] = {RGUI_T(KC_T), RALT_T(KC_R), COMBO_END};
-const uint16_t PROGMEM alt_ctl_combo[] = {RCTL_T(KC_H), RALT_T(KC_R), COMBO_END};
+const uint16_t PROGMEM ralt_rgui_combo[] = {RGUI_T(KC_T), RALT_T(KC_R), COMBO_END};
+const uint16_t PROGMEM ralt_rctl_combo[] = {RCTL_T(KC_H), RALT_T(KC_R), COMBO_END};
+const uint16_t PROGMEM lalt_rgui_combo[] = {LGUI_T(KC_E), LALT_T(KC_S), COMBO_END};
+const uint16_t PROGMEM lalt_lctl_combo[] = {LCTL_T(KC_C), LALT_T(KC_S), COMBO_END};
 combo_t key_combos[] = {
     COMBO(mouse_combo1, KC_MS_BTN1),
     COMBO(mouse_combo2, KC_MS_BTN2),
@@ -179,8 +181,10 @@ combo_t key_combos[] = {
     COMBO(move_left_combo, LALT(KC_S)),
     COMBO(move_up_combo, LALT(KC_U)),
     COMBO(move_down_combo, LALT(KC_I)),
-    COMBO(alt_gui_combo, RALT(KC_RGUI)),
-    COMBO(alt_ctl_combo, RALT(KC_RCTL)),
+    COMBO(ralt_rgui_combo, RALT(KC_RGUI)),
+    COMBO(ralt_rctl_combo, RALT(KC_RCTL)),
+    COMBO(lalt_lgui_combo, LALT(KC_LGUI)),
+    COMBO(lalt_lctl_combo, LALT(KC_LCTL)),
 };
 // clang-format on
 
