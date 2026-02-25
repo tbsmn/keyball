@@ -37,7 +37,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TERM 200
 // #define TAPPING_TERM 250
 #define QUICK_TAP_TERM 0
-#define PERMISSIVE_HOLD
+// #define PERMISSIVE_HOLD
 #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 #define COMBO_TERM 25
 #define SPLIT_DETECTED_OS_ENABLE
