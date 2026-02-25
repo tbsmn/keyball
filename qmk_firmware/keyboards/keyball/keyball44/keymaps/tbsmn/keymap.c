@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 
 #include "quantum.h"
-#include "features/tap_flow.h"
+// #include "features/tap_flow.h"
 
 // ── OS Logos ──────────────────────────────────────────────────────────────────
 #ifdef OLED_ENABLE
@@ -194,55 +194,58 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 }
 
-bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LSFT_T(KC_SPC):
-            // Immediately select the hold action when another key is pressed.
-            return true;
-        default:
-            // Do not select the hold action when another key is pressed.
-            return false;
-    }
-}
-
+// --- get hold config for tap_flow
 // bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
 //     switch (keycode) {
 //         case LSFT_T(KC_SPC):
+//             // Immediately select the hold action when another key is pressed.
 //             return true;
 //         default:
-//             return IS_QK_MOD_TAP(keycode);
+//             // Do not select the hold action when another key is pressed.
+//             return false;
 //     }
 // }
 
-bool is_tap_flow_key(uint16_t keycode) {
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        // Extract the tap keycode from mod-tap/layer-tap keys
-        case QK_MOD_TAP ... QK_MOD_TAP_MAX:
-            keycode = QK_MOD_TAP_GET_TAP_KEYCODE(keycode);
-            break;
-        case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
-            keycode = QK_LAYER_TAP_GET_TAP_KEYCODE(keycode);
-            break;
-    }
-    switch (keycode) {
-        case KC_A ... KC_Z:
-        case KC_COMM:
-        case KC_DOT:
-        case KC_SCLN:
-        case KC_SLSH:
+        case LSFT_T(KC_SPC):
             return true;
-        case KC_SPC:  // ← removed: Space/Shift key bypasses Tap Flow entirely
-            return false;
+        default:
+            return IS_QK_MOD_TAP(keycode);
     }
-    return false;
 }
 
-bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-    if (!process_tap_flow(keycode, record)) { return false; }
-    // your other code...
-    return true;
-}
+//---------------TAP-FLOW
+// bool is_tap_flow_key(uint16_t keycode) {
+//     switch (keycode) {
+//         // Extract the tap keycode from mod-tap/layer-tap keys
+//         case QK_MOD_TAP ... QK_MOD_TAP_MAX:
+//             keycode = QK_MOD_TAP_GET_TAP_KEYCODE(keycode);
+//             break;
+//         case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
+//             keycode = QK_LAYER_TAP_GET_TAP_KEYCODE(keycode);
+//             break;
+//     }
+//     switch (keycode) {
+//         case KC_A ... KC_Z:
+//         case KC_COMM:
+//         case KC_DOT:
+//         case KC_SCLN:
+//         case KC_SLSH:
+//             return true;
+//         case KC_SPC:  // ← removed: Space/Shift key bypasses Tap Flow entirely
+//             return false;
+//     }
+//     return false;
+// }
+//
+// bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+//     if (!process_tap_flow(keycode, record)) { return false; }
+//     // your other code...
+//     return true;
+// }
 
+// ----------------Original OLED CONFIG
 // #ifdef OLED_ENABLE
 //
 // #    include "lib/oledkit/oledkit.h"
