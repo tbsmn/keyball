@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 
 #include "quantum.h"
+#include "features/achordion.h"
 // #include "features/tap_flow.h"
 
 // ── OS Logos ──────────────────────────────────────────────────────────────────
@@ -193,6 +194,19 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     keyball_set_scroll_mode(get_highest_layer(state) == 3);
     return state;
 }
+ 
+//-------  achordion
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+  if (!process_achordion(keycode, record)) { return false; }
+  // Your macros ...
+
+  return true;
+}
+
+void housekeeping_task_user(void) {
+  achordion_task();
+}
+//-------
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -213,6 +227,9 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
 //             return IS_QK_MOD_TAP(keycode);
 //     }
 // }
+    //
+
+
 
 //---------------TAP-FLOW
 // bool is_tap_flow_key(uint16_t keycode) {
