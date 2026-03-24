@@ -229,8 +229,13 @@ bool achordion_chord(uint16_t tap_hold_keycode,
   // // alphas. I need the `% (MATRIX_ROWS / 2)` because my keyboard is split.
   // if (other_record->event.key.row % (MATRIX_ROWS / 2) >= 4) { return true; }
 
-  // Allow same-hand holds with non-alpha keys.
-  if (other_keycode > KC_Z) { return true; }
+switch (other_keycode) {
+  case QK_MOD_TAP ... QK_MOD_TAP_MAX:
+  case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
+    other_keycode &= 0xff;  // Get base keycode.
+}
+// Allow same-hand holds with non-alpha keys.
+if (other_keycode > KC_Z) { return true; }
 
   // Otherwise, follow the opposite hands rule.
   return achordion_opposite_hands(tap_hold_record, other_record);
