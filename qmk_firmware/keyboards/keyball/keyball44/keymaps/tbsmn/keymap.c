@@ -234,15 +234,22 @@ bool achordion_chord(uint16_t tap_hold_keycode,
   return achordion_opposite_hands(tap_hold_record, other_record);
 }
 
-bool achordion_eager_mod(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
-    case LT(3, KC_N):
-      return true;
-
-    default:
-      return false;
+uint16_t achordion_timeout(uint16_t tap_hold_key) {
+  if (tap_hold_key == LT(3, KC_N)) {
+    return 0;  // Bypass Achordion for scroll layer key
   }
+  return 800;  // Your normal timeout for other keys
 }
+
+// bool achordion_eager_mod(uint8_t mod) {
+//   switch (mod) {
+//     case LT(3, KC_N):
+//       return true;
+//
+//     default:
+//       return false;
+//   }
+// }
 
 //-------
 
