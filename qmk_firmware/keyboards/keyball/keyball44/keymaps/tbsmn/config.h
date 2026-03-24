@@ -41,7 +41,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 #define COMBO_TERM 25
 #define SPLIT_DETECTED_OS_ENABLE
-
+#define ACHORDION_STREAK
 // #define POINTING_DEVICE_AUTO_MOUSE_ENABLE
 // #define AUTO_MOUSE_DEFAULT_LAYER 1
 
