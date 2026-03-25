@@ -233,6 +233,11 @@ bool achordion_chord(uint16_t tap_hold_keycode,
   // // Also allow same-hand holds when the other key is in the rows below the
   // // alphas. I need the `% (MATRIX_ROWS / 2)` because my keyboard is split.
   // if (other_record->event.key.row % (MATRIX_ROWS / 2) >= 4) { return true; }
+  
+    //Fix for combos
+    if (!IS_KEYEVENT(other_record->event)) {
+        return true;
+    }
 
 switch (other_keycode) {
   case QK_MOD_TAP ... QK_MOD_TAP_MAX:
@@ -250,7 +255,7 @@ uint16_t achordion_timeout(uint16_t tap_hold_key) {
   if (tap_hold_key == LT(3, KC_N)) {
     return 0;  // Bypass Achordion for scroll layer key
   }
-  return 800;  // Your normal timeout for other keys
+  return 800;  // Normal timeout for other keys
 }
 
 // bool achordion_eager_mod(uint8_t mod) {
