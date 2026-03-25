@@ -269,16 +269,16 @@ uint16_t achordion_timeout(uint16_t tap_hold_key) {
 
 //-------
 
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case RSFT_T(KC_BSPC):
-            return TAPPING_TERM - 25;
-        case LSFT_T(KC_SPC):
-            return TAPPING_TERM - 25;
-        default:
-            return TAPPING_TERM;
-    }
-}
+// uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+//     switch (keycode) {
+//         case RSFT_T(KC_BSPC):
+//             return TAPPING_TERM - 25;
+//         case LSFT_T(KC_SPC):
+//             return TAPPING_TERM - 25;
+//         default:
+//             return TAPPING_TERM;
+//     }
+// }
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
