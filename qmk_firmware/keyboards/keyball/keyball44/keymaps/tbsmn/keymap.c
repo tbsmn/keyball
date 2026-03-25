@@ -216,10 +216,10 @@ bool achordion_chord(uint16_t tap_hold_keycode,
     switch (tap_hold_keycode) {
       case LT(2, KC_TAB):
         return true;
-      case RSFT_T(KC_BSPC):
-        return true;
-      case LSFT_T(KC_SPC):
-        return true;
+      // case RSFT_T(KC_BSPC):
+      //   return true;
+      // case LSFT_T(KC_SPC):
+      //   return true;
 
   //   case HOME_A:  // A + U.
   //     if (other_keycode == HOME_U) { return true; }
